@@ -1,0 +1,20 @@
+
+
+
+Given an array of N integers, and an integer K, find the number of pairs of elements in the array whose sum is equal to K.
+Count pair with given sum'
+
+
+class Solution:
+    def getPairsCount(self, arr, n, k):
+        # code here
+        d = {}
+        res = 0
+        for i in arr:
+            res += d.get(k-i, 0)
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] = 1
+        return res
+        
